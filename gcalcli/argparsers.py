@@ -640,6 +640,13 @@ def get_argument_parser():
         'of the --when will be ignored.',
     )
     add.add_argument(
+        '--transparent',
+        action='store_true',
+        dest='transparent',
+        default=False,
+        help='Prevents the event from blocking time on the calendar. '
+        '(not Busy)')
+    add.add_argument(
         '--noprompt',
         action='store_false',
         dest='prompt',

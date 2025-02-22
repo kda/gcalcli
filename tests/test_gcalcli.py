@@ -105,7 +105,8 @@ def test_add_event(PatchedGCalI):
                          descr='testing',
                          who='anyone',
                          reminders=None,
-                         color='banana')
+                         color='banana',
+                         transparent='opaque')
 
 
 def test_add_event_with_cal_prompt(PatchedGCalI, capsys, monkeypatch):
@@ -122,7 +123,8 @@ def test_add_event_with_cal_prompt(PatchedGCalI, capsys, monkeypatch):
                          descr='',
                          who='',
                          reminders=None,
-                         color='')
+                         color='',
+                         transparent='opaque')
     captured = capsys.readouterr()
     assert re.match(
         r'(?sm)^0 .*\n1 .*\n.*Specify calendar.*$', captured.out), \
